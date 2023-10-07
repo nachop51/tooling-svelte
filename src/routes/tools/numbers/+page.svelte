@@ -1,10 +1,10 @@
 <script lang="ts">
-	import Converters from './Converters.svelte';
+  import Converters from './Converters.svelte'
 </script>
 
-<main class="mx-auto card w-96 bg-primary text-primary-content">
-	<div class="card-body">
-		<h1 class="card-title">Number converter page</h1>
-		<Converters />
-	</div>
-</main>
+<div class="bg-primary card w-96">
+  <div class="card-body">
+    <h1 class="card-title text-primary-content">Number converter tool</h1>
+    <Converters />
+  </div>
+</div>
