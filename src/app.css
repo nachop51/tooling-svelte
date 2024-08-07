@@ -3,19 +3,21 @@
 @tailwind utilities;
 
 :root {
-	--primary: #6720ff;
-	--secondary: #c2a6ff;
-	--border: #d9c7ff;
-
-	--light: #f7f4ff;
-	--dark: #0f0526;
-
-	--font-family: 'Poppins', sans-serif;
+	font-family: 'Outfit', sans-serif;
+	font-optical-sizing: auto;
+	font-style: normal;
 }
 
 *,
 *::before,
 *::after {
-	box-sizing: border-box;
-	@apply m-0 p-0;
+	@apply m-0 box-border p-0;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	scrollbar-gutter: stable both-edges;
 }
