@@ -51,8 +51,8 @@ export default {
         neutral: '#3d4451',
         'neutral-content': '#cbd5e1',
         'base-100': '#0f0526',
-        'base-200': '#f9fafb',
-        'base-300': '#fefdff',
+        'base-200': '#1e0013',
+        'base-300': '#00110d',
         'base-content': '#fff',
         '--shadow': '#ffffff15',
         '.bg-gradient': {
