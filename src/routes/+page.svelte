@@ -2,7 +2,7 @@
 	<h1 class="heading-1 my-8">Welcome to the Multipurpose Tool Hub!</h1>
 
 	<section>
-		<h2><a href="/colors">Conversions</a></h2>
+		<h2><a href="/converters">Converters</a></h2>
 		<ul>
 			<li><a href="#color-conversion">Color Conversion</a></li>
 			<li><a href="#length-conversion">Length Conversion</a></li>

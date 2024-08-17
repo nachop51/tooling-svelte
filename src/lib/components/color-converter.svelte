@@ -44,10 +44,10 @@
 					on:keydown={handleKeyDown}
 					on:input={handleKeyUp}
 				/>
+				{#if lastValidHex}
+					<div class="h-6 w-6 rounded-md" style="background-color: #{lastValidHex};">&nbsp;</div>
+				{/if}
 			</label>
 		</label>
-		{#if lastValidHex}
-			<div class="h-8 w-8" style="background-color: #{lastValidHex};">&nbsp;</div>
-		{/if}
 	</div>
 </div>
