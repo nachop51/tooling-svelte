@@ -1,20 +1,15 @@
 <script lang="ts">
+	import { isArrowsCode, isCodeHexAlphanumeric, isDeleteCode } from '$lib/utils/handlers'
+
 	let validHex = false
 	let lastValidHex = ''
 	let value = ''
 
 	function handleKeyDown(event: KeyboardEvent & { currentTarget: EventTarget & HTMLInputElement }) {
-		if (
-			(event.keyCode > 64 && event.keyCode < 71) ||
-			event.code === 'Backspace' ||
-			event.code === 'Delete' ||
-			event.code === 'ArrowLeft' ||
-			event.code === 'ArrowRight' ||
-			event.code === 'ArrowUp' ||
-			event.code === 'ArrowDown' ||
-			(event.keyCode > 47 && event.keyCode < 58)
-		) {
-		} else {
+		const valid =
+			isCodeHexAlphanumeric(event.key) || isArrowsCode(event.code) || isDeleteCode(event.code)
+
+		if (!valid) {
 			event.preventDefault()
 		}
 	}
@@ -32,7 +27,16 @@
 <div class="py-4">
 	<div class="flex">
 		<label class="form-control w-full max-w-xs">
-			<div class="label"><span class="label-text">HEX Color</span></div>
+			<div class="label">
+				<span class="label-text"
+					>HEX Color <div
+						class="tooltip"
+						data-tip="Valid hex colors are formed like in three, four, six or eight digits, examples: #aaa #bbbb #cccccc #dddddddd"
+					>
+						?
+					</div></span
+				>
+			</div>
 			<label class="input input-bordered flex items-center gap-2">
 				<kbd class="kbd kbd-sm">#</kbd>
 				<input
