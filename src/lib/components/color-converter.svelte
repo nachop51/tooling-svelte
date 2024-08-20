@@ -5,7 +5,7 @@
 	import Input from './ui/input.svelte'
 
 	let lastValidHex: Color | null = null
-	let value = ''
+	let value = 'ffb'
 
 	function handleKeyDown(event: KeyboardEvent & { currentTarget: EventTarget & HTMLInputElement }) {
 		const valid =
@@ -46,36 +46,37 @@
 				/>
 			</label>
 		</label>
-		<div class="flex-1 rounded-lg border border-base-content/20 bg-base-100 py-4">
-			<div class="rounded1 mx-auto mb-6 grid w-1/3 place-items-center">
-				{#if lastValidHex}
+		{#if !lastValidHex}
+			<span class="mt-11 flex-1 text-xl">👈🏼 Insert a color</span>
+		{:else}
+			<div class="flex-1 rounded-lg border border-base-content/20 bg-base-100 py-4">
+				<div class="rounded1 mx-auto mb-6 grid w-1/3 place-items-center">
 					<div
 						class="aspect-square w-full rounded"
 						style="background-color: #{lastValidHex.hex}"
 					></div>
-				{:else}
-					<span>Insert a color</span>
+					<code>{lastValidHex.hex}</code>
+				</div>
+				{#if lastValidHex}
+					<div class="flex gap-4 px-4">
+						<Input classes="flex-1" value={lastValidHex.red} readonly>
+							<div slot="before" class="tooltip" data-tip="Red color">
+								<kbd class="kbd kbd-sm">R</kbd>
+							</div>
+						</Input>
+						<Input classes="flex-1" value={lastValidHex.green} readonly>
+							<div slot="before" class="tooltip" data-tip="Green color">
+								<kbd class="kbd kbd-sm">G</kbd>
+							</div>
+						</Input>
+						<Input classes="flex-1" value={lastValidHex.blue} readonly>
+							<div slot="before" class="tooltip" data-tip="Blue color">
+								<kbd class="kbd kbd-sm">B</kbd>
+							</div>
+						</Input>
+					</div>
 				{/if}
 			</div>
-			{#if lastValidHex}
-				<div class="flex gap-4 px-4">
-					<Input classes="flex-1" value={lastValidHex.red} readonly>
-						<div slot="before" class="tooltip" data-tip="Red color">
-							<kbd class="kbd kbd-sm">R</kbd>
-						</div>
-					</Input>
-					<Input classes="flex-1" value={lastValidHex.green} readonly>
-						<div slot="before" class="tooltip" data-tip="Green color">
-							<kbd class="kbd kbd-sm">G</kbd>
-						</div>
-					</Input>
-					<Input classes="flex-1" value={lastValidHex.blue} readonly>
-						<div slot="before" class="tooltip" data-tip="Blue color">
-							<kbd class="kbd kbd-sm">B</kbd>
-						</div>
-					</Input>
-				</div>
-			{/if}
-		</div>
+		{/if}
 	</div>
 </div>

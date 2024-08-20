@@ -27,7 +27,5 @@ export function parseHexValues(hex: string): Color {
 		color.blue = parseInt(hex.slice(4, 6), 16)
 	}
 
-	console.log(color)
-
 	return color
 }
