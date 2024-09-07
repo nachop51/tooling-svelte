@@ -1,10 +1,10 @@
-<main class="set-width">
+<main class="set-width px-6">
 	<h1 class="heading-1 my-8">Welcome to the Multipurpose Tool Hub!</h1>
 
 	<section>
 		<h2><a href="/converters">Converters</a></h2>
 		<ul>
-			<li><a href="#color-conversion">Color Conversion</a></li>
+			<li><a href="/converters/colors">Color Conversion</a></li>
 			<li><a href="#length-conversion">Length Conversion</a></li>
 			<li><a href="#number-conversion">Number Conversion</a></li>
 		</ul>
@@ -21,7 +21,7 @@
 	</section>
 
 	<section>
-		<h2>Strings</h2>
+		<h2>Text</h2>
 		<ul>
 			<li><a href="#character-counter">Character Counter</a></li>
 			<li><a href="#rot13">ROT13 Encoder/Decoder</a></li>
